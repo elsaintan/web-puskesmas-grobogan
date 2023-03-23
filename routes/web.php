@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
-
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +18,12 @@ use App\Http\Controllers\PostController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('welcome',[
+        'title' => "Home",
+        'active' => "home",
+        'posts' => Post::latest()->paginate(3)->withQueryString()
+    ]);
+})->name('home');
 
 Route::get('dashboard', [CustomAuthController::class, 'dashboard']);
 Route::get('login', [CustomAuthController::class, 'index'])->name('login');
