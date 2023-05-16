@@ -58,7 +58,7 @@ class PostController extends Controller
 
         $validated['user_id'] = Auth::user()->id;
         $validated['excerpt'] = Str::limit(strip_tags($request->body), 200);
-        $validated['published_at'] = date('D M Y');
+        $validated['published_at'] =  date('Y-m-d');
 
         Post::create($validated);
         return redirect('/dashboard/posts')->with('success', 'New post has been added!');
@@ -74,6 +74,16 @@ class PostController extends Controller
     {
         return view('admin.posts.show',[
             'post' => $post
+        ]);
+    }
+
+    public function showSinglePost(Post $post)
+    {
+        //return view('blog', compact('post'));
+        return view('pages.post',[
+            "title" => "Single Post",
+            "active" => 'artikel',
+            "post" => $post
         ]);
     }
 
@@ -115,7 +125,7 @@ class PostController extends Controller
 
         $validatedData = $request->validate($rules);
 
-        if($request->file('image')){
+        if($request->file('image')){ 
             if($request->oldImage){
                 Storage::delete($request->oldImage);
             }

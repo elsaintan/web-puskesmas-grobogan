@@ -1,6 +1,6 @@
 @extends('layouts/master')
 @section('content')
-    <header class="masthead">
+    <header class="masthead bg-3">
         <div class="container">
         </div>
     </header>
@@ -42,40 +42,40 @@
     </section>
 
 
-    <section class="akreditasi" id="akreditasi">
+    <section>
         <div class="container">
-            <div class="section-title">
-                <h2>AKREDITASI PUSKESMAS GROBOGAN</h2>
+            <div class="section-title" data-aos="zoom-in">
+                <h2>AKREDITASI UPTD PUSKESMAS GROBOGAN</h2>
             </div>
-            <div>
-                <img class="mx-auto d-block" src="/images/Sertifikasi.png">
+            <div class="text-center">
+                <img class="img-fluid" src="/images/Sertifikasi.png">
             </div>
         </div>
     </section>
 
-    <div class="frame m-3">
-        <img class="mx-auto d-block" src="/images/Frame3.png">
+    <div class="frame m-3 text-center">
+        <img class="img-fluid" src="/images/Frame3.png">
     </div>
 
     <section>
         <div class="container">
-            <div class="section-title">
+            <div class="section-title" data-aos="zoom-in">
                 <h2>INDEKS KEPUASAN MASYARAKAT</h2>
             </div>
             <div class="text-center">
-                <img class="mx-auto d-block" src="/images/SKM.png">
-                <a href="$">Isi Survey Kepuasan Masayarakat</a>
+                <img class="img-fluid" src="/images/SKM.png"></p>
+                <a href="$">Isi Survey Kepuasan Masayarakat </a> <i class="fa fa-long-arrow-right"></i>
             </div>
         </div>
     </section>
 
-    <div class="frame m-3">
-        <img class="mx-auto d-block" src="/images/Frame3.png">
+    <div class="frame m-3 text-center">
+        <img class="img-fluid" src="/images/Frame3.png">
     </div>
 
     <!--=================================
-                                                                                                                                                                                                                                                                                                                =     Posts   =
-                                                                                                                                                                                                                                                                                                            =============================-->
+                                                                                                                                                                                                                                                                                                                    =     Posts   =
+                                                                                                                                                                                                                                                                                                                =============================-->
     <section class="section testimonial" id="testimonial">
         <div class="container">
             <div class="section-title">
@@ -108,7 +108,7 @@
                                             href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a>
                                     </li>
                                     <li class="list-inline-item">
-                                        {{ $post->published_at }}
+                                        {{ \Carbon\Carbon::parse($post->published_at)->format('D M Y') }}
                                     </li>
                                 </ul>
                             </div>

@@ -21,10 +21,6 @@ body {
 }
 
 .masthead {
-    height: 100vh;
-    min-height: 500px;
-    background-image: url(../images/background/header.png);
-    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -62,7 +58,7 @@ label {
     font-size: 16px;
     letter-spacing: 0;
     line-height: 25px;
-    color: #808080;
+    color: #000;
     margin-bottom: 0;
 }
 
@@ -187,10 +183,22 @@ a:hover {
     background-size: cover;
 }
 
-.bg-coming-soon {
-    background: url(../images/background/comming-soon.jpg) fixed no-repeat;
+.bg-2 {
+    background: url(../images/background/header-profil.png);
     background-size: cover;
-    background-position: bottom;
+    height: 50vh;
+}
+
+.bg-3 {
+    background-image: url(../images/background/header.png);
+    background-size: cover;
+    height: 100vh;
+    min-height: 500px;
+}
+.bg-4 {
+    background: url(../images/background/white.png);
+    background-size: cover;
+    height: 5vh;
 }
 
 .section {
@@ -199,6 +207,10 @@ a:hover {
 
 .akreditasi {
     margin-top: 5px;
+}
+
+.profil{
+    margin-top: 70px;
 }
 
 .section-title {
@@ -211,6 +223,14 @@ a:hover {
     font-size: 35px;
     margin-bottom: 13px;
     font-weight: bold;
+}
+
+.title-content h1 {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 13px;
+    font-weight: bold;
+    color: #019934;
 }
 
 .section-title p {
@@ -432,6 +452,8 @@ button:focus,
 }
 
 .main-nav {
+    position: fixed;
+    width: 100%;
     background: #fff;
     z-index: 1;
 }
@@ -621,7 +643,8 @@ button:focus,
 
 .footer-main {
     padding: 92px 0;
-    background: #1a1b1f;
+    background-image: url(../images/footerbg.png);
+    background-size: cover;
 }
 
 @media (max-width: 768px) {
@@ -1400,6 +1423,11 @@ hr {
 .founder h2 {
     font-size: 30px;
     line-height: 30px;
+}
+
+.footrt{
+    height: 130px;
+
 }
 
 .founder cite {
@@ -2248,5 +2276,12 @@ hr {
         height: 350px;
     }
 }
+
+.responsive-iframe {
+    position: absolute;
+    width: 50%;
+    height: 75%;
+    margin: auto;
+  }
 
 /*# sourceMappingURL=style.css.map */
