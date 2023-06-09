@@ -1,7 +1,15 @@
 @extends('layouts/app')
 @section('content')
     <header class="masthead bg-2">
-        <div class="container">
+        <div class="container" align="center">
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            <h1 class="font-weight-bold">Visi Misi</h1>
+            UPTD Puskesmas Grobogan
         </div>
     </header>
 
@@ -17,8 +25,8 @@
     </section>
 
     <section class="content">
-        <div class="container">
-
+        <div class="container" align="center">
+            <img src="{{ asset('storage/' . $visi->body) }}">
         </div>
     </section>
 @endsection

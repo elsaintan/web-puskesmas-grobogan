@@ -2,6 +2,16 @@
 @section('content')
     <header class="masthead bg-2">
         <div class="container">
+            <div class="container" align="center">
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                <h1 class="font-weight-bold">Tata Nilai</h1>
+                UPTD Puskesmas Grobogan
+            </div>
         </div>
     </header>
 
@@ -13,10 +23,12 @@
             <div class="frame m-3 text-center">
                 <img class="img-fluid" src="/images/Frame6.png" width="200px">
             </div>
-            <div class="">
-                {{ $data->body }}
-            </div>
         </div>
     </section>
 
+    <section class="content">
+        <div class="container" align="center">
+            <img src="{{ asset('storage/' . $data->body) }}">
+        </div>
+    </section>
 @endsection

@@ -3,8 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DokumenConteroller;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LayananController;
 use App\Http\Controllers\PengaduanSaranController;
 use App\Http\Controllers\ProfilController;
 use App\Models\Post;
@@ -26,7 +28,7 @@ Route::get('/', function () {
         'active' => "home",
         'posts' => Post::latest()->paginate(3)->withQueryString()
     ]);
-})->name('home'); 
+})->name('home');
 
 Route::get('dashboard', [CustomAuthController::class, 'dashboard']);
 Route::get('login', [CustomAuthController::class, 'index'])->name('login');
@@ -39,9 +41,12 @@ Route::resource('/dashboard/categories', CategoryController::class)->except('sho
 
 Route::get('/dashboard/posts/checkSlug', [PostController::class, 'checkSlug']);
 Route::resource('/dashboard/posts', PostController::class);
+Route::resource('/dashboard/layanan', LayananController::class);
+Route::resource('/dashboard/dokumen', DokumenConteroller::class);
 
 Route::get('/dashboard/pengaduan-dan-saran',[ProfilController::class, 'aduan']);
 Route::get('/dashboard/profil/{type}',[ProfilController::class, 'show']);
+Route::post('/dashboard/updateImage', [ProfilController::class, 'updateImage']);
 
 Route::get('/visi-misi', [HomeController::class, 'visimisi']);
 Route::get('/tata-nilai', [HomeController::class, 'tatanilai']);
@@ -56,13 +61,14 @@ Route::get('/layanan-pengaduan-saran', function () {
     return view('pages.pengaduansaran',[
         'active' => "contact"
     ]);
-});
+})->name('survey');
 
 Route::get('/survey-kepuasan-masyarakat', function () {
     return view('pages.skm',[
         'active' => "contact"
     ]);
 });
+
 
 Route::post('/pengaduan-dan-saran/send',[PengaduanSaranController::class, 'store']);
 

@@ -14,17 +14,12 @@ class ProfilController extends Controller
     public function show($type)
     {
         switch ($type){
-        case "visi":
+        case "visi-misi":
             return view('admin.visi',[
                 'data' => Home::where('type', $type)->first()
             ]);
             break;
-        case "misi":
-            return view('admin.misi',[
-                'data' => Home::where('type', $type)->first()
-            ]);
-            break;
-        case "tata nilai":
+        case "tata-nilai":
             return view('admin.tatanilai',[
                 'data' => Home::where('type', $type)->first()
             ]);
@@ -61,13 +56,15 @@ class ProfilController extends Controller
         ]);
     }
 
-    public function updateImage(Request $request, Home $home)
+    public function updateImage(Request $request)
     {
         $rules = [
             'body' => 'image',
         ];
 
         $validatedData = $request->validate($rules);
+
+        //return $validatedData;
 
         if($request->file('body')){
             if($request->oldImage){
@@ -76,9 +73,9 @@ class ProfilController extends Controller
             $validatedData['body'] = $request->file('body')->store('profil-images');
         }
 
-        Home::where('id', $home->id)
+        Home::where('type', $request->type)
                 ->update($validatedData);
-        return redirect('/dashboard/all-post')->with('success', 'Data has been updated!');
+        return redirect('/dashboard/profil/'.$request->type)->with('success', 'Data has been updated!');
     }
 
     public function update(Request $request, Home $home)

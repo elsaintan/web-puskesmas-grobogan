@@ -14,9 +14,9 @@
                 </div>
                 <div class="col-lg-7 col-md-3 col-6 mt-5 mt-lg-0 text-right">
                     <div class="block-2">
-                        <iframe class="responsive-iframe"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.913864027613!2d110.91992071477323!3d-7.019410794929614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70b746b9000ec3%3A0x4c7e33482e59e357!2sPuskesmas%20Grobogan!5e0!3m2!1sen!2sid!4v1679673818693!5m2!1sen!2sid"
-                           allowfullscreen="" loading="lazy"
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d31679.31089825997!2d110.922109!3d-7.019411!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70b746b9000ec3%3A0x4c7e33482e59e357!2sPuskesmas%20Grobogan!5e0!3m2!1sen!2sid!4v1686117819455!5m2!1sen!2sid"
+                            width="300" height="250" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>

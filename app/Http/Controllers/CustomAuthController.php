@@ -78,7 +78,7 @@ class CustomAuthController extends Controller
 
 
     public function signOut() {
-        Session::flush();
+        //Session::flush();
         Auth::logout();
 
         return Redirect('login');

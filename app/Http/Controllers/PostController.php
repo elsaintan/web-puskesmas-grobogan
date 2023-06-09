@@ -44,6 +44,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+
         $validated = $request->validate([
             'title' => 'required|max:255',
             'slug' => 'required|unique:posts',
@@ -125,7 +126,7 @@ class PostController extends Controller
 
         $validatedData = $request->validate($rules);
 
-        if($request->file('image')){ 
+        if($request->file('image')){
             if($request->oldImage){
                 Storage::delete($request->oldImage);
             }

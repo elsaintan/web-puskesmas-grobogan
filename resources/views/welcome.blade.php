@@ -64,7 +64,7 @@
             </div>
             <div class="text-center">
                 <img class="img-fluid" src="/images/SKM.png"></p>
-                <a href="$">Isi Survey Kepuasan Masayarakat </a> <i class="fa fa-long-arrow-right"></i>
+                <a href="{{ URL::route('survey') }}">Isi Survey Kepuasan Masayarakat </a> <i class="fa fa-long-arrow-right"></i>
             </div>
         </div>
     </section>
@@ -74,8 +74,8 @@
     </div>
 
     <!--=================================
-                                                                                                                                                                                                                                                                                                                    =     Posts   =
-                                                                                                                                                                                                                                                                                                                =============================-->
+                                                                                                                                                                                                                                                                                                                        =     Posts   =
+                                                                                                                                                                                                                                                                                                                    =============================-->
     <section class="section testimonial" id="testimonial">
         <div class="container">
             <div class="section-title">

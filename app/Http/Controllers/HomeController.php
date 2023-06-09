@@ -11,8 +11,7 @@ class HomeController extends Controller
     {
         return view('pages.visimisi',[
             'active' => 'profil',
-            'visi' => Home::where('type', 'visi')->first(),
-            'misi' => Home::where('type', 'misi')->first()
+            'visi' => Home::where('type', 'visi-misi')->first()
         ]);
     }
 
@@ -28,7 +27,7 @@ class HomeController extends Controller
     {
         return view('pages.tatanilai',[
             "active" => 'profil',
-            'data' => Home::where('type', 'tata nilai')->first()
+            'data' => Home::where('type', 'tata-nilai')->first()
         ]);
     }
 

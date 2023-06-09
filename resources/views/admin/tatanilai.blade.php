@@ -1,7 +1,7 @@
 @extends('layouts/dashboard')
 @section('content')
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Struktur Organisasi</h1>
+        <h1 class="h2">Tata Nilai</h1>
     </div>
     <div class="col-lg-8">
         <form method="POST" action="/dashboard/updateImage" class="mb-5" enctype="multipart/form-data">
@@ -15,7 +15,7 @@
                     <img class="img-preview img-fluid mb-3 col-sm-5">
                 @endif
 
-                <input class="form-control @error('image') is-invalid @enderror" type="file" id="image"
+                <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
                     name="body" onchange="previewImage()">
                 @error('image')
                     <div class="invalid-feedback">

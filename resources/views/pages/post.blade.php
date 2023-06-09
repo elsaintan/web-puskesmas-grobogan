@@ -26,7 +26,7 @@
                                     {{ $post->published_at }}
                                 </li>
                             </ul>
-                        </div>
+                        </div> 
                         <!-- Post body -->
                         <div class="post-body">
                             <!-- Feature Image -->

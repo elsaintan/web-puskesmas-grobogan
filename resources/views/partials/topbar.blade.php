@@ -22,16 +22,23 @@
                         <li><a class="dropdown-item @@tatanilai" href="/tata-nilai">Tata Nilai</a></li>
                         <li><a class="dropdown-item @@motto" href="/motto">Motto</a>
                         </li>
-                        <li><a class="dropdown-item @@struktur" href="/maklumat-pelayanan">Maklumat Pelayanan</a>
+                        <li><a class="dropdown-item @@struktur" href="/maklumat-pelayanan">Maklumat
+                                Pelayanan</a>
                         </li>
-                        <li><a class="dropdown-item @@sk" href="/struktur-organisasi">Struktur Organisasi</a>
+                        <li><a class="dropdown-item @@sk" href="/struktur-organisasi">Struktur
+                                Organisasi</a>
                         </li>
-                        <li><a class="dropdown-item @@sop" href="/tentang-puskesmas">Tentang Puskesmas</a></li>
+                        <li><a class="dropdown-item @@sop" href="/tentang-puskesmas">Tentang
+                                Puskesmas</a></li>
                         <li><a class="dropdown-item @@galeri" href="/galeri">Galeri</a></li>
                     </ul>
                 </li>
                 <li class="nav-item @@layanan {{ $active === 'faq' ? 'active' : '' }}">
                     <a class="nav-link" href="">Layanan</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link dropdown-toggle" href="{{ URL::route('home') }}">Dokumen
+                    </a>
                 </li>
                 <li class="nav-item dropdown @@pages {{ $active === 'contact' ? 'active' : '' }}">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Aduan & SKM
@@ -39,10 +46,12 @@
                     </a>
                     <!-- Dropdown list -->
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item @@pengaduan" href="/layanan-pengaduan-saran">Layanan Pengaduan
+                        <li><a class="dropdown-item @@pengaduan" href="/layanan-pengaduan-saran">Layanan
+                                Pengaduan
                                 Saran</a>
                         </li>
-                        <li><a class="dropdown-item @@skm" href="/survey-kepuasan-masyarakat">Survey Kepuasan
+                        <li><a class="dropdown-item @@skm"
+                                href="/survey-kepuasan-masyarakat">Survey Kepuasan
                                 Masyarakat
                                 (SKM)</a></li>
                     </ul>
