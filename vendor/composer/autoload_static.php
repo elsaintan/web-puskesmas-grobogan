@@ -551,6 +551,7 @@ class ComposerStaticInit2477369951d4d6c3339db5dc59ddb88e
         'App\\Http\\Controllers\\PengaduanSaranController' => __DIR__ . '/../..' . '/app/Http/Controllers/PengaduanSaranController.php',
         'App\\Http\\Controllers\\PostController' => __DIR__ . '/../..' . '/app/Http/Controllers/PostController.php',
         'App\\Http\\Controllers\\ProfilController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfilController.php',
+        'App\\Http\\Controllers\\ShowLayanan' => __DIR__ . '/../..' . '/app/Http/Controllers/ShowLayanan.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',

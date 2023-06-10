@@ -9,6 +9,10 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\PengaduanSaranController;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\ShowLayanan;
+use App\Models\Dokumen;
+use App\Models\Layanan;
+use App\Models\Pemeriksaan;
 use App\Models\Post;
 
 /*
@@ -69,8 +73,22 @@ Route::get('/survey-kepuasan-masyarakat', function () {
     ]);
 });
 
+Route::get('/layanan/dokumen', function () {
+    return view('pages.dokumen',[
+        'active' => "dokumen",
+        'data' => Dokumen::all()
+    ]);
+});
+
+
 
 Route::post('/pengaduan-dan-saran/send',[PengaduanSaranController::class, 'store']);
+Route::get('/layanan/ugd',[ShowLayanan::class, 'ugd']);
+
+Route::get('/display_pdf','PdfController@index');
+
+
+
 
 
 

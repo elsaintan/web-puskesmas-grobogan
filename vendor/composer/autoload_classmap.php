@@ -17,6 +17,7 @@ return array(
     'App\\Http\\Controllers\\PengaduanSaranController' => $baseDir . '/app/Http/Controllers/PengaduanSaranController.php',
     'App\\Http\\Controllers\\PostController' => $baseDir . '/app/Http/Controllers/PostController.php',
     'App\\Http\\Controllers\\ProfilController' => $baseDir . '/app/Http/Controllers/ProfilController.php',
+    'App\\Http\\Controllers\\ShowLayanan' => $baseDir . '/app/Http/Controllers/ShowLayanan.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',

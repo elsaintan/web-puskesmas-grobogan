@@ -15,7 +15,7 @@
             </div>
             <div class="mb-3">
                 <label for="body" class="form-label">Deskripsi</label>
-                <textarea name="deskripsi" class="form-control" id="textAreaExample2" rows="8">{{ old('body') }}</textarea>
+                <textarea name="deskripsi" class="form-control" id="textAreaExample2" rows="5">{{ old('body') }}</textarea>
             </div>
             <div class="mb-3">
                 <label for="jadwal" class="form-label">Jadwal</label>
@@ -23,29 +23,36 @@
             </div>
             <div class="mb-3">
                 <label for="jadwal" class="form-label">Pendaftaran</label>
-                <div class="row">
-                    <div class="col-6">
-                        <input type="text" name="jadwal" id="jadwal" class="form-control" placeholder="Hari">
-                    </div>
-                    <div class="col-6">
-                        <input type="text" name="jadwal" id="jadwal" class="form-control" placeholder="Jam Buka">
+                <div id="jadwal">
+                    <div class="row">
+                        <div class="col-5">
+                            <input type="text" name="hari" id="hari" class="form-control" placeholder="Hari">
+                        </div>
+                        <div class="col-5">
+                            <input type="text" name="jam" id="jam" class="form-control" placeholder="Jam Buka">
+                        </div>
+                        <div class="col-2">
+                            <button id="addMore" type="button" class="btn btn-primary">Add more</button>
+                        </div>
                     </div>
                 </div>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Standar Pelayanan</label>
+                <img class="img-preview img-fluid mb-3 col-sm-5">
+                <input class="form-control @error('image') is-invalid @enderror" type="file" id="image"
+                    name="standar_pelayanan" onchange="previewImage()">
+                @error('image')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
 
     <script>
-        const title = document.querySelector('#title');
-        const slug = document.querySelector('#slug');
-
-        title.addEventListener('change', function() {
-            fetch('/dashboard/posts/checkSlug?title=' + title.value)
-                .then(response => response.json())
-                .then(data => slug.value = data.slug)
-        });
-
         document.addEventListener('trix-file-accept', function(e) {
             e.preventDefault();
         })
@@ -61,5 +68,26 @@
                 imgPreview.src = oFREvent.target.result;
             }
         }
+
+        document.getElementById('addMore').addEventListener('click', jadwal)
+        function jadwal() {
+
+            document.getElementById('jadwal').innerHTML = '<ol><li>html data</li></ol>';
+
+            /*e.preventDefault();
+                $("#jadwal").append("<div class='row'>");
+                $("#jadwal").append("<div class='col-5'>");
+                $("#jadwal").append(
+                    "<input type='text' name='hari[]' id='hari' class='form-control' placeholder='Hari'>"
+                    );
+                $("#jadwal").append("</div>");
+                $("#jadwal").append("<div class='col-5'>");
+                $("#jadwal").append(
+                    "<input type='text' name='jam[]' id='jam' class='form-control' placeholder='Jam'>");
+                $("#jadwal").append("</div>");
+                $("#jadwal").append("</div>"); */
+        }
+
+
     </script>
 @endsection
