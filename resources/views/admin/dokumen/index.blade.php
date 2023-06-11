@@ -43,7 +43,7 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $doc->dokumen }}</td>
                         <td>
-                            <a href="/dashboard/dokumen/{{ $doc->id }}" class="badge bg-info"><span
+                            <a href="javascript:void(0);" onclick="javascipt:window.open('{{ asset('/storage/dokumen/'. $doc->dokumen ) }}');" class="badge bg-info"><span
                                     data-feather="eye"></span></a>
                             <form action="/dashboard/dokumen/{{ $doc->id }}" method="POST" class="d-inline">
                                 @method('delete')

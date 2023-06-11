@@ -78,14 +78,14 @@ class ProfilController extends Controller
         return redirect('/dashboard/profil/'.$request->type)->with('success', 'Data has been updated!');
     }
 
-    public function update(Request $request, Home $home)
+    public function update(Request $request)
     {
         $rules = [
             'body' => 'required',
         ];
         $validatedData = $request->validate($rules);
-        Home::where('id', $home->id)
+        Home::where('id', $request->id)
                 ->update($validatedData);
-        return redirect('/dashboard/all-post')->with('success', 'Data has been updated!');
+        return redirect('/dashboard/profil/'.$request->type)->with('success', 'Data has been updated!');
     }
 }

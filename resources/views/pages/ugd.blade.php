@@ -8,7 +8,7 @@
     <section class="profil" id="profil">
         <div class="container">
             <div class="section-title" data-aos="zoom-in">
-                <h2>UGD 24 Jam</h2>
+                <h2>{{ $data->type }}</h2>
             </div>
             <div class="frame m-3">
                 <img class="mx-auto d-block" src="/images/Frame6.png" width="200px">

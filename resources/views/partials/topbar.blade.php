@@ -1,6 +1,6 @@
 <nav class="navbar main-nav navbar-expand-lg px-2 px-sm-0 py-2 py-lg-0">
     <div class="container">
-        <a class="navbar-brand" href="index.html"><img src="{{ URL::asset('images/Frame.png') }}" alt="logo"
+        <a class="navbar-brand" href="/"><img src="{{ URL::asset('images/Frame.png') }}" alt="logo"
                 width="260" height="50"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +33,7 @@
                         <li><a class="dropdown-item @@galeri" href="/galeri">Galeri</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown @@layanan {{ $active === 'faq' ? 'active' : '' }}">
+                <li class="nav-item dropdown @@layanan {{ $active === 'layanan' ? 'active' : '' }}">
                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Layanan
                         <span><i class="ti-angle-down"></i></span>
                     </a>
@@ -43,8 +43,9 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Rawat Inap</a>
 
                             <ul class="dropdown-menu" aria-labelledby="dropdown0501">
-                                <li><a class="dropdown-item" href="/layanan/ugd">UGD 24 Jam</a></li>
-                                <li><a class="dropdown-item" href="#">VK (Ruang Bersalin) 24 Jam</a></li>
+                                <li><a class="dropdown-item" href="/layanan/UGD-24-Jam">UGD 24 Jam</a></li>
+                                <li><a class="dropdown-item" href="/layanan/VK-(Ruang-Bersalin)-24-Jam">VK (Ruang
+                                        Bersalin) 24 Jam</a></li>
                             </ul>
                         </li>
                         <li class="dropdown dropdown-submenu dropleft">
@@ -52,27 +53,28 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Rawat Jalan</a>
 
                             <ul class="dropdown-menu" aria-labelledby="dropdown0501">
-                                <li><a class="dropdown-item" href="#">Loket Pendaftaran</a></li>
-                                <li><a class="dropdown-item" href="#">BP 1 (Umum)</a></li>
-                                <li><a class="dropdown-item" href="#">BP 1 (Lansia)</a></li>
-                                <li><a class="dropdown-item" href="#">KIA</a></li>
-                                <li><a class="dropdown-item" href="#">Laborat</a></li>
-                                <li><a class="dropdown-item" href="#">MTSB</a></li>
-                                <li><a class="dropdown-item" href="#">Gizi dan konseling</a></li>
-                                <li><a class="dropdown-item" href="#">Gigi dan mulut</a></li>
-                                <li><a class="dropdown-item" href="#">Fisioterapi</a></li>
-                                <li><a class="dropdown-item" href="#">KB</a></li>
-                                <li><a class="dropdown-item" href="#">TB</a></li>
-                                <li><a class="dropdown-item" href="#">Apotek</a></li>
+                                <li><a class="dropdown-item" href="/layanan/Loket">Loket Pendaftaran</a></li>
+                                <li><a class="dropdown-item" href="/layanan/BP-1-(Umum)">BP 1 (Umum)</a></li>
+                                <li><a class="dropdown-item" href="/layanan/BP-2-(Lansia)">BP 1 (Lansia)</a></li>
+                                <li><a class="dropdown-item" href="/layanan/KIA">KIA</a></li>
+                                <li><a class="dropdown-item" href="/layanan/Laboratorium">Laborat</a></li>
+                                <li><a class="dropdown-item" href="/layanan/MTBS">MTBS</a></li>
+                                <li><a class="dropdown-item" href="/layanan/Gizi-dan-Konseling">Gizi dan konseling</a>
+                                </li>
+                                <li><a class="dropdown-item" href="/layanan/Gigi-dan-Mulut">Gigi dan mulut</a></li>
+                                <li><a class="dropdown-item" href="/layanan/Fisioterapi">Fisioterapi</a></li>
+                                <li><a class="dropdown-item" href="/layanan/KB">KB</a></li>
+                                <li><a class="dropdown-item" href="/layanan/TB">TB</a></li>
+                                <li><a class="dropdown-item" href="/layanan/Apotek">Apotek</a></li>
                             </ul>
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item ">
+                <li class="nav-item {{ $active === 'dokumen' ? 'active' : '' }}">
                     <a class="nav-link dropdown-toggle" href="/layanan/dokumen">Dokumen
                     </a>
                 </li>
-                <li class="nav-item dropdown @@pages {{ $active === 'contact' ? 'active' : '' }}">
+                <li class="nav-item dropdown @@pages {{ $active === 'aduan' ? 'active' : '' }}">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Aduan & SKM
                         <span><i class="ti-angle-down"></i></span>
                     </a>
@@ -89,7 +91,7 @@
                                 (SKM)</a></li>
                     </ul>
                 </li>
-                <li class="nav-item @@contact {{ $active === 'partner' ? 'active' : '' }}">
+                <li class="nav-item @@contact {{ $active === 'contact' ? 'active' : '' }}">
                     <a class="nav-link" href="/contact">Hubungi Kami</a>
                 </li>
             </ul>

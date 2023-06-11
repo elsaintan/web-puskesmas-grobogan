@@ -4,9 +4,11 @@
         <h1 class="h2">Tentang Puskesmas</h1>
     </div>
     <div class="col-lg-8">
-        <form method="POST" action="/dashboard/posts" class="mb-5" enctype="multipart/form-data">
+        <form method="POST" action="/dashboard/update" class="mb-5" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
+                <input type="hidden" name="id" value="{{ $data->id }}">
+                <input type="hidden" name="type" value="{{ $data->type }}">
                 @error('body')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
@@ -18,11 +20,8 @@
     </div>
 
     <script>
-
         document.addEventListener('trix-file-accept', function(e) {
             e.preventDefault();
         })
-
-
     </script>
 @endsection

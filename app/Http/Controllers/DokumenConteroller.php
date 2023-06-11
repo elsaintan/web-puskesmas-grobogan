@@ -47,9 +47,8 @@ class DokumenConteroller extends Controller
 
         if($request->file('dokumen')){
             $dokumen_name = $request->file('dokumen')->getClientOriginalName();
-            $filenameSimpan = $dokumen_name;
-            $request->file('dokumen')->move(public_path('dokumen'), $filenameSimpan);
-            $validatedData['dokumen'] = $filenameSimpan;
+            $request->file('dokumen')->storeAs('dokumen', $dokumen_name);
+            $validatedData['dokumen'] = $dokumen_name;
         }
 
         Dokumen::create($validatedData);

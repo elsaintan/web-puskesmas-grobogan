@@ -51,6 +51,7 @@ Route::resource('/dashboard/dokumen', DokumenConteroller::class);
 Route::get('/dashboard/pengaduan-dan-saran',[ProfilController::class, 'aduan']);
 Route::get('/dashboard/profil/{type}',[ProfilController::class, 'show']);
 Route::post('/dashboard/updateImage', [ProfilController::class, 'updateImage']);
+Route::post('/dashboard/update', [ProfilController::class, 'update']);
 
 Route::get('/visi-misi', [HomeController::class, 'visimisi']);
 Route::get('/tata-nilai', [HomeController::class, 'tatanilai']);
@@ -63,13 +64,13 @@ Route::get('/posts/{post:slug}', [PostController::class, 'showSinglePost']);
 
 Route::get('/layanan-pengaduan-saran', function () {
     return view('pages.pengaduansaran',[
-        'active' => "contact"
+        'active' => "aduan"
     ]);
 })->name('survey');
 
 Route::get('/survey-kepuasan-masyarakat', function () {
     return view('pages.skm',[
-        'active' => "contact"
+        'active' => "aduan"
     ]);
 });
 
@@ -83,9 +84,16 @@ Route::get('/layanan/dokumen', function () {
 
 
 Route::post('/pengaduan-dan-saran/send',[PengaduanSaranController::class, 'store']);
-Route::get('/layanan/ugd',[ShowLayanan::class, 'ugd']);
+Route::get('/layanan/{type}',[ShowLayanan::class, 'ugd']);
 
 Route::get('/display_pdf','PdfController@index');
+
+Route::get('/contact', function (){
+    return view('pages.contact', [
+        'active' => "contact",
+    ]);
+
+});
 
 
 

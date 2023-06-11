@@ -42,7 +42,7 @@
     <!--============================
 =            Footer            =
 =============================-->
-<div class="footrt" id="footrt"></div>
+    <div class="footrt" id="footrt"></div>
 
 
     <!-- To Top -->

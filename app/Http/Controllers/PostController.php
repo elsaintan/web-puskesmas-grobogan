@@ -50,7 +50,7 @@ class PostController extends Controller
             'slug' => 'required|unique:posts',
             'category_id' => 'required',
             'image' => 'image',
-            'body' => 'required',
+            'body' => 'required', 
         ]);
 
         if($request->file('image')){
