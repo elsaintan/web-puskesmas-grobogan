@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Layanan;
+use App\Models\Pemeriksaan;
 use Illuminate\Http\Request;
 
 class LayananController extends Controller
@@ -72,9 +73,11 @@ class LayananController extends Controller
     public function edit($id)
     {
         $data = Layanan::find($id);
+        $pemeriksaan = Pemeriksaan::where('layanan_id', $data->id)->get();
 
         return view('admin.layanan.ranap', [
-            'data' => $data
+            'data' => $data,
+            'pemeriksaan' => $pemeriksaan
         ]);
     }
 

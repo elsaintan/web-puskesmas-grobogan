@@ -34,24 +34,36 @@ Route::get('/', function () {
     ]);
 })->name('home');
 
-Route::get('dashboard', [CustomAuthController::class, 'dashboard']);
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('dashboard', [CustomAuthController::class, 'dashboard']);
+    Route::get('/dashboard/categories/checkSlug', [CategoryController::class, 'checkSlug']);
+    Route::resource('/dashboard/categories', CategoryController::class)->except('show');
+
+    Route::get('/dashboard/posts/checkSlug', [PostController::class, 'checkSlug']);
+    Route::resource('/dashboard/posts', PostController::class);
+    Route::resource('/dashboard/layanan', LayananController::class);
+    Route::resource('/dashboard/dokumen', DokumenConteroller::class);
+
+    Route::get('/dashboard/pengaduan-dan-saran',[ProfilController::class, 'aduan']);
+    Route::get('/dashboard/profil/{type}',[ProfilController::class, 'show']);
+    Route::post('/dashboard/updateImage', [ProfilController::class, 'updateImage']);
+    Route::post('/dashboard/update', [ProfilController::class, 'update']);
+
+    Route::get('/dashboard/galeri', function () {
+        return view('admin.galeri');
+    });
+
+    Route::post('/dashboard/addImage',[ProfilController::class, 'addImage']);
+
+});
+
+
 Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom');
 
-Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
+Route::post('signout', [CustomAuthController::class, 'signOut'])->name('signout');
 
-Route::get('/dashboard/categories/checkSlug', [CategoryController::class, 'checkSlug']);
-Route::resource('/dashboard/categories', CategoryController::class)->except('show');
 
-Route::get('/dashboard/posts/checkSlug', [PostController::class, 'checkSlug']);
-Route::resource('/dashboard/posts', PostController::class);
-Route::resource('/dashboard/layanan', LayananController::class);
-Route::resource('/dashboard/dokumen', DokumenConteroller::class);
-
-Route::get('/dashboard/pengaduan-dan-saran',[ProfilController::class, 'aduan']);
-Route::get('/dashboard/profil/{type}',[ProfilController::class, 'show']);
-Route::post('/dashboard/updateImage', [ProfilController::class, 'updateImage']);
-Route::post('/dashboard/update', [ProfilController::class, 'update']);
 
 Route::get('/visi-misi', [HomeController::class, 'visimisi']);
 Route::get('/tata-nilai', [HomeController::class, 'tatanilai']);
@@ -68,12 +80,6 @@ Route::get('/layanan-pengaduan-saran', function () {
     ]);
 })->name('survey');
 
-Route::get('/survey-kepuasan-masyarakat', function () {
-    return view('pages.skm',[
-        'active' => "aduan"
-    ]);
-});
-
 Route::get('/layanan/dokumen', function () {
     return view('pages.dokumen',[
         'active' => "dokumen",
@@ -81,12 +87,11 @@ Route::get('/layanan/dokumen', function () {
     ]);
 });
 
-Route::get('/dashboard/galeri', function () {
-    return view('admin.galeri');
+Route::get('/survey-kepuasan-masyarakat', function () {
+    return view('pages.skm',[
+        'active' => "aduan"
+    ]);
 });
-
-Route::post('/dashboard/addImage',[ProfilController::class, 'addImage']);
-
 
 
 Route::post('/pengaduan-dan-saran/send',[PengaduanSaranController::class, 'store']);

@@ -21,17 +21,17 @@
             <div class="mb-3">
                 <label for="jadwal" class="form-label">Pendaftaran</label>
                 <div id="jadwal">
+                    @foreach ($pemeriksaan as $item)
                     <div class="row">
-                        <div class="col-5">
-                            <input type="text" name="hari" id="hari" class="form-control" placeholder="Hari">
+                        <div class="col-6">
+                            <input type="text" name="hari" id="hari" class="form-control" value="{{ $item->hari }}">
                         </div>
-                        <div class="col-5">
-                            <input type="text" name="jam" id="jam" class="form-control" placeholder="Jam Buka">
-                        </div>
-                        <div class="col-2">
-                            <button id="addMore" type="button" class="btn btn-primary">Add more</button>
+                        <div class="col-6">
+                            <input type="text" name="jam" id="jam" class="form-control" value="{{ $item->jam }}">
                         </div>
                     </div>
+                    @endforeach
+
                 </div>
             </div>
             <div class="mb-3">
