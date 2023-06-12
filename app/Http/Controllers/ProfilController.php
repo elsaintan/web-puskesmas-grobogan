@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Home;
 use App\Models\PengaduanSaran;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 use function PHPSTORM_META\type;
@@ -87,5 +88,25 @@ class ProfilController extends Controller
         Home::where('id', $request->id)
                 ->update($validatedData);
         return redirect('/dashboard/profil/'.$request->type)->with('success', 'Data has been updated!');
+    }
+
+    public function addImage(Request $request){
+        $rules = [
+            'image' => 'image',
+        ];
+
+        $validatedData = $request->validate($rules);
+
+        if($request->file('image')){
+            $dokumen_name = $request->file('image')->getClientOriginalName();
+            $request->file('image')->storeAs('galeri', $dokumen_name);
+            $validatedData['image'] = $dokumen_name;
+        }
+
+        //Dokumen::create($validatedData);
+        DB::table('galeri')->insert($validatedData);
+
+        return redirect('/dashboard/galeri/')->with('success', 'Data has been added!');
+
     }
 }

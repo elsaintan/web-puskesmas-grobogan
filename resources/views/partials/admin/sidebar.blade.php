@@ -30,6 +30,12 @@
                     Dokumen
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link " href="/dashboard/galeri">
+                    <span data-feather="paperclip"></span>
+                    Galeri
+                </a>
+            </li>
         </ul>
         <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
             <span>Profil</span>
@@ -82,16 +88,9 @@
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('/dashboard/layanan/ranap') ? 'active' : '' }}"
-                    href="/dashboard/layanan/{{ 'ranap' }}">
+                    href="/dashboard/layanan/">
                     <span data-feather="clipboard"></span>
-                    Rawat Inap
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {{ Request::is('/dashboard/layanan/rawat-jalan') ? 'active' : '' }}"
-                    href="/dashboard/layanan/{{ 'rawat-jalan' }}">
-                    <span data-feather="clipboard"></span>
-                    Rawat Jalan
+                    Layanan
                 </a>
             </li>
         </ul>

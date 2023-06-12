@@ -14,7 +14,11 @@ class LayananController extends Controller
      */
     public function index()
     {
-        //
+        $data = Layanan::all();
+
+        return view('admin.layanan.index', [
+            'data' => $data
+        ]);
     }
 
     /**
@@ -65,9 +69,13 @@ class LayananController extends Controller
      * @param  \App\Models\Layanan  $layanan
      * @return \Illuminate\Http\Response
      */
-    public function edit(Layanan $layanan)
+    public function edit($id)
     {
-        //
+        $data = Layanan::find($id);
+
+        return view('admin.layanan.ranap', [
+            'data' => $data
+        ]);
     }
 
     /**

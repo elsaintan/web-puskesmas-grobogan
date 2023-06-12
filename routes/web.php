@@ -81,6 +81,12 @@ Route::get('/layanan/dokumen', function () {
     ]);
 });
 
+Route::get('/dashboard/galeri', function () {
+    return view('admin.galeri');
+});
+
+Route::post('/dashboard/addImage',[ProfilController::class, 'addImage']);
+
 
 
 Route::post('/pengaduan-dan-saran/send',[PengaduanSaranController::class, 'store']);
