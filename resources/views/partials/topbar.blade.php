@@ -70,9 +70,15 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item {{ $active === 'dokumen' ? 'active' : '' }}">
-                    <a class="nav-link dropdown-toggle" href="/layanan/dokumen">Dokumen
-                    </a>
+                <li class="nav-item dropdown @@profile {{ $active === 'dokumen' ? 'active' : '' }}">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Dokumen<span><i
+                                class="ti-angle-down"></i></span></a>
+                    <!-- Dropdown list -->
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item @@visimisi" href="/surat-keputusan">Surat Keputusan</a>
+                        </li>
+                        <li><a class="dropdown-item @@tatanilai" href="/sop">SOP</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item dropdown @@pages {{ $active === 'aduan' ? 'active' : '' }}">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Aduan & SKM

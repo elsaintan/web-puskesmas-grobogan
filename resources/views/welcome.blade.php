@@ -48,7 +48,7 @@
                 <h2>AKREDITASI UPTD PUSKESMAS GROBOGAN</h2>
             </div>
             <div class="text-center">
-                <img class="img-fluid" src="/images/Sertifikasi.png">
+                <img class="img-fluid" src="{{ asset('storage/' . $sertifikasi->body) }}">
             </div>
         </div>
     </section>
@@ -63,7 +63,7 @@
                 <h2>INDEKS KEPUASAN MASYARAKAT</h2>
             </div>
             <div class="text-center">
-                <img class="img-fluid" src="/images/SKM.png"></p>
+                <img class="img-fluid" src="{{ asset('storage/' . $akreditasi->body) }}"></p>
                 <a href="{{ URL::route('survey') }}">Isi Survey Kepuasan Masayarakat </a> <i class="fa fa-long-arrow-right"></i>
             </div>
         </div>

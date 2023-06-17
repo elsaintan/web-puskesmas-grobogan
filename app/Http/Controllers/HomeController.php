@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Home;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -58,7 +59,8 @@ class HomeController extends Controller
     public function galeri()
     {
         return view('pages.galeri',[
-            "active" => 'profil',
+            'active' => 'galeri',
+            'galeri' => DB::table('galeri')->get()
         ]);
     }
 

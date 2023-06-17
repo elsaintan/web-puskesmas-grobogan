@@ -22,7 +22,7 @@
                 <label for="jadwal" class="form-label">Pendaftaran</label>
                 <div id="jadwal">
                     @foreach ($pemeriksaan as $item)
-                    <div class="row">
+                    <div class="row p-1">
                         <div class="col-6">
                             <input type="text" name="hari" id="hari" class="form-control" value="{{ $item->hari }}">
                         </div>
@@ -30,6 +30,7 @@
                             <input type="text" name="jam" id="jam" class="form-control" value="{{ $item->jam }}">
                         </div>
                     </div>
+
                     @endforeach
 
                 </div>
@@ -39,6 +40,7 @@
                 @if ($data->standar_pelayanan)
                     <img src="{{ asset('storage/standar_pelayanan/' . $data->standar_pelayanan) }}"
                         class="img-preview img-fluid mb-3 col-sm-5 d-block">
+                    <input type="hidden" name="oldImage" value="{{ $data->standar_pelayanan }}">
                 @else
                     <img class="img-preview img-fluid mb-3 col-sm-5">
                 @endif

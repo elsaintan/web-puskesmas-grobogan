@@ -11,6 +11,7 @@ use App\Http\Controllers\PengaduanSaranController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\ShowLayanan;
 use App\Models\Dokumen;
+use App\Models\Home;
 use App\Models\Layanan;
 use App\Models\Pemeriksaan;
 use App\Models\Post;
@@ -30,7 +31,9 @@ Route::get('/', function () {
     return view('welcome',[
         'title' => "Home",
         'active' => "home",
-        'posts' => Post::latest()->paginate(3)->withQueryString()
+        'posts' => Post::latest()->paginate(3)->withQueryString(),
+        'akreditasi' => Home::find('7'),
+        'sertifikasi' => Home::find('8'),
     ]);
 })->name('home');
 

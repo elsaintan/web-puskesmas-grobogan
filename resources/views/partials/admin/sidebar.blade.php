@@ -32,8 +32,20 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link " href="/dashboard/galeri">
-                    <span data-feather="paperclip"></span>
+                    <span data-feather="image"></span>
                     Galeri
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="/dashboard/profil/{{ 'sertifikat' }}">
+                    <span data-feather="file-text"></span>
+                    Sertifikat
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="/dashboard/profil/{{ 'akreditasi' }}">
+                    <span data-feather="check-circle"></span>
+                    Akreditasi
                 </a>
             </li>
         </ul>

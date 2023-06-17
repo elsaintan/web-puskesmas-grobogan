@@ -45,6 +45,17 @@ class ProfilController extends Controller
                 'data' => Home::where('type', $type)->first()
             ]);
             break;
+        case "sertifikat":
+            return view('admin.sertifikat',[
+                'data' => Home::find('8'),
+            ]);
+            //return Home::find('7');
+            break;
+        case "akreditasi":
+            return view('admin.akreditasi',[
+                'data' => Home::where('type', $type)->first(),
+            ]);
+            break;
         }
 
 
@@ -71,7 +82,9 @@ class ProfilController extends Controller
             if($request->oldImage){
                 Storage::delete($request->oldImage);
             }
-            $validatedData['body'] = $request->file('body')->store('profil-images');
+            $dokumen_name = $request->file('body')->getClientOriginalName();
+
+            $validatedData['body'] = $request->file('body')->storeAs('profil-images', $dokumen_name);
         }
 
         Home::where('type', $request->type)

@@ -14,6 +14,13 @@
         @csrf
         <div class="row">
             <div class="col">
+                <select name="category" id="category">
+                    <option value="">Select Category</option>
+                    <option value="sk">Surat Keputusan</option>
+                    <option value="sop">SOP</option>
+                </select>
+            </div>
+            <div class="col">
                 <input type="file" class="form-control @error('dokumen') is-invalid @enderror" id="dokumen"
                     name="dokumen">
                 @error('dokumen')
