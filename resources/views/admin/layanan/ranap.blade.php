@@ -24,11 +24,12 @@
                 <div id="jadwal">
                     @foreach ($pemeriksaan as $item)
                     <div class="row p-1">
+                        <input type="hidden" name="id_pemeriksaan[]" value="{{ $item->id }}">
                         <div class="col-6">
-                            <input type="text" name="hari" id="hari" class="form-control" value="{{ $item->hari }}">
+                            <input type="text" name="hari[]" id="hari" class="form-control" value="{{ $item->hari }}">
                         </div>
                         <div class="col-6">
-                            <input type="text" name="jam" id="jam" class="form-control" value="{{ $item->jam }}">
+                            <input type="text" name="jam[]" id="jam" class="form-control" value="{{ $item->jam }}">
                         </div>
                     </div>
 

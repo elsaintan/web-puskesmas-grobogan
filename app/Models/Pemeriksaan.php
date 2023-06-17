@@ -9,5 +9,6 @@ class Pemeriksaan extends Model
 {
     use HasFactory;
     protected $table = 'pemeriksaan';
+    public $timestamps = false;
     protected $guarded = ['id'];
 }

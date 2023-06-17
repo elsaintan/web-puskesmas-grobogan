@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Layanan;
 use App\Models\Pemeriksaan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Storage;
 
 class LayananController extends Controller
@@ -91,16 +92,28 @@ class LayananController extends Controller
      */
     public function update(Request $request)
     {
+        //return $request->id_pemeriksaan[2];
+        $size =  count($request['hari']);
+        for ($i=0; $i < $size; $i++) {
+            Pemeriksaan::where('id', $request->id_pemeriksaan[$i])->update([
+                'hari' => $request->hari[$i],
+                'jam' => $request->jam[$i]
+            ]);
+        }
+
+        $validatedData = $request->except('hari', 'jam', 'id_pemeriksaan');
+
+
         if($request->file('standar_pelayanan')){
-            if($request->oldImage == $request->standar_pelayanan){
-                Storage::delete($request->oldImage);
+            if($request->oldImage != $request->standar_pelayanan){
+                Storage::disk('local')->delete("standar_pelayanan/" . $request->oldImage);
             }
             $dokumen_name = $request->file('standar_pelayanan')->getClientOriginalName();
             $request->file('standar_pelayanan')->storeAs('standar_pelayanan', $dokumen_name);
             $validatedData['standar_pelayanan'] = $dokumen_name;
         }
 
-        Layanan::find($request->id)->update($request->except('hari', 'jam'));
+        Layanan::find($request->id)->update($validatedData);
         return redirect('/dashboard/layanan')->with('success', 'New post has been added!');
     }
 
