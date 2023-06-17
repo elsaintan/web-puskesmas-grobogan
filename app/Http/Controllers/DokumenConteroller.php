@@ -41,6 +41,7 @@ class DokumenConteroller extends Controller
     {
         $rules = [
             'dokumen' => 'file',
+            'category' => 'required'
         ];
 
         $validatedData = $request->validate($rules);
@@ -89,6 +90,7 @@ class DokumenConteroller extends Controller
     {
         $rules = [
             'dokumen' => 'file',
+            'category' => 'required'
         ];
 
         $validatedData = $request->validate($rules);

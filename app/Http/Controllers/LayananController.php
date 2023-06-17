@@ -89,17 +89,18 @@ class LayananController extends Controller
      * @param  \App\Models\Layanan  $layanan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Layanan $layanan)
+    public function update(Request $request)
     {
         if($request->file('standar_pelayanan')){
-            if($request->oldImage != $request->standar_pelayanan){
+            if($request->oldImage == $request->standar_pelayanan){
                 Storage::delete($request->oldImage);
-                $dokumen_name = $request->file('standar_pelayanan')->getClientOriginalName();
-                $validatedData['standar_pelayanan'] = $request->file('standar_pelayanan')->storeAs('standar_pelayanan', $dokumen_name);
             }
+            $dokumen_name = $request->file('standar_pelayanan')->getClientOriginalName();
+            $request->file('standar_pelayanan')->storeAs('standar_pelayanan', $dokumen_name);
+            $validatedData['standar_pelayanan'] = $dokumen_name;
         }
 
-        Layanan::find($request->id)->update($request);
+        Layanan::find($request->id)->update($request->except('hari', 'jam'));
         return redirect('/dashboard/layanan')->with('success', 'New post has been added!');
     }
 

@@ -58,6 +58,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::post('/dashboard/addImage',[ProfilController::class, 'addImage']);
 
+    Route::post('/dashboard/layanan/update', [LayananController::class, 'update']);
+
 });
 
 

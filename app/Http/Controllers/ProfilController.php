@@ -104,7 +104,9 @@ class ProfilController extends Controller
     }
 
     public function addImage(Request $request){
+
         $rules = [
+            'keterangan' => 'required',
             'image' => 'image',
         ];
 

@@ -1,6 +1,6 @@
 @extends('layouts/master')
 @section('content')
-    <header class="masthead bg-3">
+    <header class="masthead bg-3"> 
         <div class="container">
         </div>
     </header>

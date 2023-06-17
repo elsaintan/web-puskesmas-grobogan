@@ -14,7 +14,7 @@
         @csrf
         <div class="row">
             <div class="col">
-                <select name="category" id="category">
+                <select name="category" id="category" class="form-control">
                     <option value="">Select Category</option>
                     <option value="sk">Surat Keputusan</option>
                     <option value="sop">SOP</option>

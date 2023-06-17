@@ -1,5 +1,5 @@
 @extends('layouts/dashboard')
-@section('content')
+@section('content') 
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Galeri</h1>
     </div>
@@ -7,10 +7,13 @@
         <form method="POST" action="/dashboard/addImage" class="mb-5" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
-                <input type="text" name="keterangan" id="keterangan" class="form-control" placeholder="Keterangan Gambar">
+                <img class="img-preview img-fluid mb-3 col-sm-5">
             </div>
             <div class="mb-3">
-                <img class="img-preview img-fluid mb-3 col-sm-5">
+                <textarea name="keterangan" id="keterangan" class="form-control" placeholder="Keterangan Gambar"></textarea>
+            </div>
+            <div class="mb-3">
+
                 <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image"
                     onchange="previewImage()">
                 @error('image')

@@ -4,8 +4,9 @@
         <h1 class="h2">Layanan Rawat Inap</h1>
     </div>
     <div class="col-lg-8">
-        <form method="POST" action="/dashboard/posts" class="mb-5" enctype="multipart/form-data">
+        <form method="POST" action="/dashboard/layanan/update" class="mb-5" enctype="multipart/form-data">
             @csrf
+            <input type="hidden" name="id" value="{{ $data->id }}">
             <div class="mb-3">
                 <label for="type" class="form-label">Kategori Layanan</label>
                 <input type="text" name="type" id="type" class="form-control" value="{{ $data->type }}">
