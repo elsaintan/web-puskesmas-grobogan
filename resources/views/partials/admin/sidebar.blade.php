@@ -49,9 +49,6 @@
                 </a>
             </li>
         </ul>
-        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span>Profil</span>
-        </h6>
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a class="nav-link " href="/dashboard/profil/{{ 'visi-misi' }}">
@@ -94,9 +91,6 @@
                 </a>
             </li>
         </ul>
-        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span>Layanan</span>
-        </h6>
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('/dashboard/layanan/ranap') ? 'active' : '' }}"
