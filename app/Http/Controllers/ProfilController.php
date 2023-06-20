@@ -49,7 +49,6 @@ class ProfilController extends Controller
             return view('admin.sertifikat',[
                 'data' => Home::find('8'),
             ]);
-            //return Home::find('7');
             break;
         case "akreditasi":
             return view('admin.akreditasi',[
@@ -57,8 +56,6 @@ class ProfilController extends Controller
             ]);
             break;
         }
-
-
     }
 
     public function aduan()
@@ -70,6 +67,7 @@ class ProfilController extends Controller
 
     public function updateImage(Request $request)
     {
+        //return $request->type;
         $rules = [
             'body' => 'image',
         ];
@@ -104,7 +102,6 @@ class ProfilController extends Controller
     }
 
     public function addImage(Request $request){
-
         $rules = [
             'keterangan' => 'required',
             'image' => 'image',

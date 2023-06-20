@@ -65,7 +65,11 @@ class DokumenConteroller extends Controller
      */
     public function show($id)
     {
-        //
+        $dokumen = Dokumen::where('category',$id)->get();
+        return view('pages.dokumen',[
+            'active' => "dokumen",
+            'data' => $dokumen
+        ]);
     }
 
     /**

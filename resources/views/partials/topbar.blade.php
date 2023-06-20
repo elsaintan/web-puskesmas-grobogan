@@ -75,9 +75,9 @@
                                 class="ti-angle-down"></i></span></a>
                     <!-- Dropdown list -->
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item @@visimisi" href="/surat-keputusan">Surat Keputusan</a>
+                        <li><a class="dropdown-item @@visimisi" href="/dokumen/sk">Surat Keputusan</a>
                         </li>
-                        <li><a class="dropdown-item @@tatanilai" href="/sop">SOP</a></li>
+                        <li><a class="dropdown-item @@tatanilai" href="/dokumen/sop">SOP</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown @@pages {{ $active === 'aduan' ? 'active' : '' }}">

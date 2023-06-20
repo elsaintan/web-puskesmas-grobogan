@@ -85,12 +85,8 @@ Route::get('/layanan-pengaduan-saran', function () {
     ]);
 })->name('survey');
 
-Route::get('/layanan/dokumen', function () {
-    return view('pages.dokumen',[
-        'active' => "dokumen",
-        'data' => Dokumen::all()
-    ]);
-});
+Route::get('/dokumen/{type}', [DokumenConteroller::class, 'show']);
+Route::get('/dokumen/{type}', [DokumenConteroller::class, 'show']);
 
 Route::get('/survey-kepuasan-masyarakat', function () {
     return view('pages.skm',[
