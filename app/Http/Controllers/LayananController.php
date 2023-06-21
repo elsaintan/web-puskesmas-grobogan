@@ -114,7 +114,7 @@ class LayananController extends Controller
         }
 
         Layanan::find($request->id)->update($validatedData);
-        return redirect('/dashboard/layanan')->with('success', 'New post has been added!');
+        return redirect('/dashboard/layanan')->with('success', 'Data been added!');
     }
 
     /**

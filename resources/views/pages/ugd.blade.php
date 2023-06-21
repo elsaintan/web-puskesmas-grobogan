@@ -57,4 +57,10 @@
             </div>
         </div>
     </section>
+
+    <section class="content">
+        <div class="container" align="center">
+            <img src="{{ asset('storage/standar_pelayanan/' . $data->standar_pelayanan) }}" height="600px">
+        </div>
+    </section>
 @endsection
