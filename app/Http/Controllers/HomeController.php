@@ -60,7 +60,7 @@ class HomeController extends Controller
     {
         return view('pages.galeri',[
             'active' => 'galeri',
-            'galeri' => DB::table('galeri')->get()
+            'galeri' => DB::table('galeri')->orderBy('id', 'DESC')->get()
         ]);
     }
 

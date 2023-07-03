@@ -26,7 +26,7 @@
 
     <section class="content">
         <div class="container" align="center">
-            <img src="{{ asset('storage/' . $visi->body) }}">
+            <img class="img-fluid" src="{{ asset('storage/' . $visi->body) }}">
         </div>
     </section>
 @endsection

@@ -28,7 +28,7 @@
 
     <section class="content">
         <div class="container" align="center">
-            <img src="{{ asset('storage/' . $data->body) }}">
+            <img class="img-fluid" src="{{ asset('storage/' . $data->body) }}">
         </div>
     </section>
 

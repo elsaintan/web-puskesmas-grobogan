@@ -27,18 +27,19 @@
                             <strong>
                                 <p>Telepon</p>
                             </strong>
-                            <p>(0292) 7703006</p>
+                            <p>(62)292 5140744</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="card border-success">
-                        <div class="card-body text-center p-lg-5">
-                            <img src="/images/wa.png" alt="Telephon" width="50px" height="50px">
-                            <strong>
-                                <p>Whatsapp</p>
-                            </strong>
-                            <p>Puskesmas Grobogan</p>
+                        <div class="card-body text-center p-lg-5"><a href="https://wa.me/62895620040900" target="_blank">
+                                <img src="/images/wa.png" alt="Telephon" width="50px" height="50px">
+                                <strong>
+                                    <p>Whatsapp</p>
+                                </strong>
+                                <p>Puskesmas Grobogan</p>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -49,7 +50,7 @@
                             <strong>
                                 <p>Email</p>
                             </strong>
-                            <p>help.pusgrob@gmail.com</p>
+                            <p>pkmgrobogan@gmail.com</p>
                         </div>
                     </div>
                 </div>

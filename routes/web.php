@@ -15,6 +15,7 @@ use App\Models\Home;
 use App\Models\Layanan;
 use App\Models\Pemeriksaan;
 use App\Models\Post;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,12 @@ use App\Models\Post;
 */
 
 Route::get('/', function () {
+    /*try{
+        DB::connection()->getDatabaseName();
+     }catch(Exception $e){
+        return $e->getMessage();
+     }*/
+
     return view('welcome',[
         'title' => "Home",
         'active' => "home",
