@@ -51,19 +51,25 @@ class LayananController extends Controller
      * @param  \App\Models\Layanan  $layanan
      * @return \Illuminate\Http\Response
      */
-    public function show($type)
+    public function show($id)
     {
-        switch ($type) {
-            case 'ranap':
-                return view('admin.ranap');
-                break;
-            case 'rawat-jalan':
-                return view('admin.rawatjalan');
-                break;
-            default:
-                # code...
-                break;
-        }
+        // switch ($type) {
+        //     case 'ranap':
+        //         return view('admin.ranap');
+        //         break;
+        //     case 'rawat-jalan':
+        //         return view('admin.rawatjalan');
+        //         break;
+        //     default:
+        //         # code...
+        //         break;
+        // }
+        $data = Layanan::find($id);
+        $pemeriksaan = Pemeriksaan::where('layanan_id', $data->id)->get();
+        return view('admin.layanan.view', [
+            'data' => $data,
+            'pemeriksaan' => $pemeriksaan
+        ]);
     }
 
     /**

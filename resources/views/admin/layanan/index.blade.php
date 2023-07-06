@@ -32,7 +32,7 @@
                             <a href="/dashboard/layanan/{{ $item->id }}/edit" class="badge bg-warning"><span
                                     data-feather="edit"></span></a>
                         </td>
-                    </tr>
+                    </tr> 
                 @endforeach
             </tbody>
         </table>
