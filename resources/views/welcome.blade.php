@@ -1,40 +1,68 @@
 @extends('layouts/master')
 @section('content')
-    <header class="masthead bg-3"> 
+    <header class="masthead bg-3">
         <div class="container">
         </div>
     </header>
     <!--====  End of Hero Section  ====-->
-    <section class="section pt-0 position-relative pull-top">
+    {{-- <section class="section pt-0 position-relative pull-top">
         <div class="container">
             <div class="shadow p-4" style="background-color: #FFF500">
                 <div class="row g-0">
-                    <div class="col-md-1 text-right">
+                    {{-- <div class="col-md-1 text-right">
                         <i class="fa fa-map-marker fa-3x" style="color:#019934"></i>
-                    </div>
-                    <div class="col-md-4 text-left">
+                    </div> --}}
+                    {{-- <div class="col-md-4 col-sm-2 text-left">
+                        <i class="fa fa-map-marker fa-3x" style="color:#019934"></i>
                         <h5>Lokasi</h5>
                         <p>Jl. Pangeran Puger No.160, Grobogan</p>
-                    </div>
-                    <div class="col text-left">
+                    </div> --}}
+                    {{-- <div class="col text-left">
                         <img src="/images/minus.png" height="65px">
-                    </div>
-                    <div class="col-md-1 text-right">
+                    </div> --}}
+                    {{-- <div class="col-md-1 text-right">
                         <i class="fa fa-phone fa-3x" style="color:#019934"></i>
-                    </div>
-                    <div class="col-md-2 text-left">
+                    </div> --}}
+                    {{-- <div class="col-md-2 text-left">
+                        <i class="fa fa-phone fa-3x" style="color:#019934"></i>
                         <h5>Telepon</h5>
-                        <p>(0292) 7703006</p>
-                    </div>
-                    <div class="col text-left">
+                        <p> (0292) 7703006</p>
+                    </div> --}}
+                    {{-- <div class="col text-left">
                         <img src="/images/minus.png" height="65px">
-                    </div>
-                    <div class="col-md-1 text-right">
+                    </div> --}}
+                    {{-- <div class="col-md-1 text-right">
                         <i class="fa fa-whatsapp fa-3x" style="color:#019934"></i>
-                    </div>
-                    <div class="col-md-2 text-left">
+                    </div> --}}
+                    {{-- <div class="col-md-2 text-left">
+                        <i class="fa fa-whatsapp fa-3x" style="color:#019934"></i>
                         <h5>WhatsApp</h5>
                         <p>+62889900111</p>
+                    </div>
+                </div>
+            </div>
+        </div> --}}
+    {{-- </section> --}}
+
+    <section class="section pt-0 position-relative pull-top">
+        <div class="container">
+            <div class="rounded shadow p-5 bg-white">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mt-5 mt-md-0 text-center">
+                        <i class="ti-map-alt h1" style="color:#019934"></i>
+                        <h3 class="mt-4 text-capitalize h5 ">Lokasi</h3>
+                        <p class="regular text-muted">Jl. Pangeran Puger No.160, Grobogan</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mt-5 mt-md-0 text-center">
+                        <i class="ti-headphone-alt h1" style="color:#019934"></i>
+                        <h3 class="mt-4 text-capitalize h5 ">Telepon</h3>
+                        <p class="regular text-muted">(0292) 7703006</p>
+                    </div>
+                    <div class="col-lg-4 col-md-12 mt-5 mt-lg-0 text-center">
+                        <i class="ti-mobile h1" style="color:#019934"></i>
+                        <h3 class="mt-4 text-capitalize h5 ">WhatsApp</h3>
+                        <p class="regular text-muted">+62895620040900</p>
+                        </p>
                     </div>
                 </div>
             </div>
