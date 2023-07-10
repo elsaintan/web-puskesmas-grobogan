@@ -16,7 +16,7 @@
     <section class="profil" id="profil">
         <div class="container">
             <div class="section-title" data-aos="zoom-in">
-                <h2>Dokumen UPTD Puskesmas Grobogan</h2>
+                <h2>{{ $title }} UPTD Puskesmas Grobogan</h2>
             </div>
             <div class="frame m-3 text-center">
                 <img class="img-fluid" src="/images/Frame6.png" width="200px">

@@ -66,10 +66,20 @@ class DokumenConteroller extends Controller
     public function show($id)
     {
         $dokumen = Dokumen::where('category',$id)->get();
-        return view('pages.dokumen',[
-            'active' => "dokumen",
-            'data' => $dokumen
-        ]);
+        if ($id == "sk") {
+            return view('pages.dokumen',[
+                'active' => "dokumen",
+                'data' => $dokumen,
+                'title' => "Surat Keputusan"
+            ]);
+        }else{
+            return view('pages.dokumen',[
+                'active' => "dokumen",
+                'data' => $dokumen,
+                'title' => "SOP"
+            ]);
+        }
+
     }
 
     /**
