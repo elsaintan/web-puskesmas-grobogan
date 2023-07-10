@@ -9,7 +9,7 @@
         <div class="container">
             <div class="section-title" data-aos="zoom-in">
                 <h2>Hubungi Kami</h2>
-                <p> UPTD Puskesmas Grobogan </p>
+                <p style="font-family: 'Open Sans', sans-serif;"> UPTD Puskesmas Grobogan </p>
             </div>
             <div class="frame m-3">
                 <img class="mx-auto d-block" src="/images/Frame6.png" width="200px">
