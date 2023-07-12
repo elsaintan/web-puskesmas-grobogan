@@ -1,7 +1,7 @@
 <nav class="navbar main-nav navbar-expand-lg px-2 px-sm-0 py-2 py-lg-0">
     <div class="container">
-        <a class="navbar-brand" href="/"><img src="{{ URL::asset('images/Frame.png') }}" alt="logo"
-                width="260" height="50"></a>
+        <a class="navbar-brand" href="/"><img src="{{ URL::asset('images/Frame.png') }}" alt="logo" width="260"
+                height="50"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="ti-menu"></span>
@@ -38,20 +38,12 @@
                         <span><i class="ti-angle-down"></i></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li class="dropdown dropdown-submenu dropleft">
-                            <a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0501" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Rawat Inap</a>
-
-                            <ul class="dropdown-menu" aria-labelledby="dropdown0501">
-                                <li><a class="dropdown-item" href="/layanan/UGD-24-Jam">UGD 24 Jam</a></li>
-                                <li><a class="dropdown-item" href="/layanan/VK-(Ruang-Bersalin)-24-Jam">VK (Ruang
-                                        Bersalin) 24 Jam</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown dropdown-submenu dropleft">
+                        <li><a class="dropdown-item" href="/layanan/UGD-24-Jam">UGD 24 Jam</a></li>
+                        <li><a class="dropdown-item" href="/layanan/VK-(Ruang-Bersalin)-24-Jam">VK (Ruang
+                                Bersalin) 24 Jam</a></li>
+                        <li class="dropdown dropdown-submenu dropright">
                             <a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0501" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Rawat Jalan</a>
-
                             <ul class="dropdown-menu" aria-labelledby="dropdown0501">
                                 <li><a class="dropdown-item" href="/layanan/Loket">Loket Pendaftaran</a></li>
                                 <li><a class="dropdown-item" href="/layanan/BP-1-(Umum)">BP 1 (Umum)</a></li>
